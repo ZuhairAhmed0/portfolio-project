@@ -13,8 +13,16 @@ const AboutSchema = mongoose.Schema({
     type: [String],
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 const About = mongoose.model("about", AboutSchema);
 
-module.exports  = About;
+module.exports = About;
