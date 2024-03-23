@@ -13,6 +13,7 @@ import Tools from "../../features/projects/Tools";
 import { useDeleteProject } from "./useDeleteProject";
 import deleteCallback from "../../utils/deleteCallback";
 import { useQueryClient } from "@tanstack/react-query";
+import { setSuccessOrError } from "../../store";
 const initialState = {
   id: "",
   name: "",
@@ -51,17 +52,22 @@ function Projects() {
     formData.append("liveDemo", liveDemo);
     formData.append("image", image);
 
-    if (isNew) {
-      addProject(
-        formData,
-        updateCallback(setIsEdited, dispatch, queryClient, "projects")
-      );
+    if (!name || !description || !tools || !sourceCode || !liveDemo || !image) {
+      dispatch(setSuccessOrError(null, "all fields are required"));
+      setTimeout(() => dispatch(setSuccessOrError(null)), 3000);
     } else {
-      formData.append("_id", id);
-      updateProject(
-        formData,
-        updateCallback(setIsEdited, dispatch, queryClient, "projects")
-      );
+      if (isNew) {
+        addProject(
+          formData,
+          updateCallback(setIsEdited, dispatch, queryClient, "projects")
+        );
+      } else {
+        formData.append("_id", id);
+        updateProject(
+          formData,
+          updateCallback(setIsEdited, dispatch, queryClient, "projects")
+        );
+      }
     }
   }
   function handleUpdate(id) {
@@ -101,8 +107,6 @@ function Projects() {
           <FaPlus />
         </Button>
       </h1>
-
-      <Alerts />
 
       {data.length > 0 &&
         data.map((project) => {
@@ -147,6 +151,7 @@ function Projects() {
       {isEdited && (
         <Overlay>
           <form className="form-styles" onSubmit={handleSubmit}>
+            <Alerts />
             <h2>{isNew ? "Add new" : "Update"} Project</h2>
             <>
               <input type="hidden" value={id} />

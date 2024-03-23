@@ -5,20 +5,32 @@ export async function getMyServices() {
   return response.data;
 }
 
-export async function addService(data) {
-  const response = await baseApi.post("/services", data);
+export async function addService(data, accessToken) {
+  const response = await baseApi.post("/services", data,  {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }
 
-export async function updateService(data) {
-  const response = await baseApi.put("/services/edit", data);
+export async function updateService(data, accessToken) {
+  const response = await baseApi.put("/services/edit", data,  {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }
 
-export async function deleteService(id) {
-  const response = await baseApi.delete(`/services/delete/${id}`);
+export async function deleteService(id, accessToken) {
+  const response = await baseApi.delete(`/services/delete/${id}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }

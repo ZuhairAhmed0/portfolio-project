@@ -5,6 +5,9 @@ const initialState = {
   bio: "",
   info: "",
   skills: [],
+  email: "",
+  password: "",
+  accessToken: "",
 };
 
 const aboutSlice = createSlice({
@@ -16,10 +19,15 @@ const aboutSlice = createSlice({
       state.info = action.payload.info;
       state.bio = action.payload.bio;
       state.skills = action.payload.skills;
+      state.email = action.payload.email;
+      state.password = action.payload.password;
+    },
+    setAccessToken(state, action) {
+      state.accessToken = action.payload;
     },
   },
 });
 
-export const { setAboutInfo } = aboutSlice.actions;
+export const { setAboutInfo, setAccessToken } = aboutSlice.actions;
 
 export default aboutSlice.reducer;

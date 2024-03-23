@@ -27,7 +27,7 @@ function Skills() {
           <FaTools /> Skills
         </h2>
         <div className="skill">
-          {data.skills &&
+          {data && data.skills &&
             data.skills.map((skill) => (
               <p key={skill}>
                 {skill === "Html5" ? (

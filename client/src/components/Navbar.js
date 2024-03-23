@@ -2,10 +2,12 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { HashLink as Link } from "react-router-hash-link";
 import Logo from "./Logo";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [active, setActive] = useState("");
   const [openNavbar, setOpenNavbar] = useState(false);
+  const { accessToken } = useSelector((store) => store.about);
 
   function handleActive(link) {
     setOpenNavbar((open) => !open);
@@ -75,6 +77,11 @@ function Navbar() {
               Contact Me
             </Link>
           </li>
+          {accessToken && (
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

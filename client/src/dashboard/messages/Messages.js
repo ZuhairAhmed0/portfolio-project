@@ -83,6 +83,8 @@ function Messages() {
       {isEdited && (
         <Overlay>
           <form className="form-styles" onSubmit={handleSubmit}>
+      <Alerts />
+
             <h2>Update Service</h2>
             <>
               <label htmlFor="description">description</label>

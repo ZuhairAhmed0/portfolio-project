@@ -11,6 +11,7 @@ import { useAddService } from "./useAddService";
 import { useDeleteService } from "./useDeleteService";
 import deleteCallback from "../../utils/deleteCallback";
 import { useQueryClient } from "@tanstack/react-query";
+import { setSuccessOrError } from "../../store";
 
 const initialState = { id: "", name: "", description: "", icon: "" };
 
@@ -32,16 +33,21 @@ function Services() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (isNew) {
-      addService(
-        { name, description, icon },
-        updateCallback(setIsEdited, dispatch, queryClient, "services")
-      );
+    if (!name || !description || !icon) {
+      dispatch(setSuccessOrError(null, "all fields are required"));
+      setTimeout(() => dispatch(setSuccessOrError(null)), 3000);
     } else {
-      updateService(
-        { _id: id, name, description, icon },
-        updateCallback(setIsEdited, dispatch, queryClient, "services")
-      );
+      if (isNew) {
+        addService(
+          { name, description, icon },
+          updateCallback(setIsEdited, dispatch, queryClient, "services")
+        );
+      } else {
+        updateService(
+          { _id: id, name, description, icon },
+          updateCallback(setIsEdited, dispatch, queryClient, "services")
+        );
+      }
     }
   }
 
@@ -110,6 +116,7 @@ function Services() {
       {isEdited && (
         <Overlay>
           <form className="form-styles" onSubmit={handleSubmit}>
+            <Alerts />
             <h2>{isNew ? "Add new" : "Update"} Service</h2>
             <>
               <input type="hidden" value={id} />

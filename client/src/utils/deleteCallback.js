@@ -9,7 +9,7 @@ function deleteCallback(dispatch, queryClient, queryParams) {
       queryClient.invalidateQueries(queryParams);
     },
     onError: (err) => {
-      dispatch(setSuccessOrError(err.response.data.message));
+      dispatch(setSuccessOrError(err.response.data.message || err.response.data || err.message));
       time();
     },
   };

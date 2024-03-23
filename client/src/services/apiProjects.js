@@ -5,20 +5,32 @@ export async function getProjects() {
   return response.data;
 }
 
-export async function addProject(data) {
-  const response = await baseApi.post("/projects", data);
+export async function addProject(data, accessToken) {
+  const response = await baseApi.post("/projects", data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }
 
-export async function updateProject(data) {
-  const response = await baseApi.put("/projects/edit", data);
+export async function updateProject(data, accessToken) {
+  const response = await baseApi.put("/projects/edit", data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }
 
-export async function deleteProject(id) {
-  const response = await baseApi.delete(`/projects/delete/${id}`);
+export async function deleteProject(id, accessToken) {
+  const response = await baseApi.delete(`/projects/delete/${id}`,  {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }

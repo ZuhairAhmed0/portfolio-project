@@ -6,14 +6,22 @@ export async function createMessage(body) {
   return response.data;
 }
 
-export async function getMessages() {
-  const response = await baseApi.get("/messages");
+export async function getMessages(accessToken) {
+  const response = await baseApi.get("/messages", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }
 
-export async function deleteMessage(id) {
-  const response = await baseApi.delete(`/messages/${id}`);
+export async function deleteMessage(id, accessToken) {
+  const response = await baseApi.delete(`/messages/${id}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   return response.data;
 }

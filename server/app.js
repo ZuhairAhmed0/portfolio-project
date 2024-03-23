@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
+app.use("/auth", require("./routes/authRoutes"));
 app.use("/aboutme", require("./routes/aboutRoutes"));
 app.use("/services", require("./routes/servicesRoutes"));
 app.use("/projects", require("./routes/projectsRoutes"));
