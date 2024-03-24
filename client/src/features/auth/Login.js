@@ -28,10 +28,11 @@ function Login() {
         onSuccess: (res) => {
           dispatch(setAccessToken(res));
           queryClient.invalidateQueries("about");
+          dispatch(setSuccessOrError(null));
           navigate("/dashboard");
         },
         onError: (err) => {
-          dispatch(setSuccessOrError(err.response.data.message));
+          dispatch(setSuccessOrError(null,err.response.data || err.message));
         },
       }
     );

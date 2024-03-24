@@ -26,7 +26,7 @@ function About() {
             <strong>contact</strong> me.
           </p>
           <Button className="primary" type="button">
-            <HashLink to="#contact">Contact Me</HashLink>
+            <HashLink to="/#contact">Contact Me</HashLink>
           </Button>
         </div>
       )}

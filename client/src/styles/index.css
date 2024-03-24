@@ -86,7 +86,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url("../../public/image/common-bg.png");
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url("../../public/image/common-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -343,6 +348,8 @@ textarea {
   text-decoration: none;
   font-size: 1.2rem;
   transition: transform 200ms linear;
+  width: 130px;
+  text-align: center;
 }
 .skills .container .skill p:hover {
   transform: translateY(-15px);
@@ -389,7 +396,7 @@ textarea {
 }
 @media (max-width: 760px) {
   .projects .details div.card,
-.projects .project div.card {
+  .projects .project div.card {
     margin: auto;
     width: 90%;
   }
@@ -458,7 +465,8 @@ textarea {
   transition: 1s;
   z-index: 1;
 }
-.projects .details div.card div.overlay a:hover, .projects .details div.card div.overlay a:focus,
+.projects .details div.card div.overlay a:hover,
+.projects .details div.card div.overlay a:focus,
 .projects .project div.card div.overlay a:hover,
 .projects .project div.card div.overlay a:focus {
   color: #fff;
@@ -646,7 +654,12 @@ textarea {
 
 .contact {
   padding: 1rem 0 3rem;
-  background: linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url("../../public/image/common-bg.png");
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url("../../public/image/common-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

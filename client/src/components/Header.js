@@ -13,7 +13,7 @@ function Header() {
           <h3>Hey, I'm Zuhair Ahmed</h3>
           <p>{bio}</p>
           <Button className="primary">
-            <HashLink to="#projects">Projects</HashLink>
+            <HashLink to="/#projects">Projects</HashLink>
           </Button>
         </div>
         <div className="img"></div>
