@@ -3,10 +3,6 @@ import {
     Routes
 } from "react-router-dom";
 import {
-    Route,
-    Routes
-} from "react-router-dom";
-import {
     useEffect
 } from "react";
 import Layout from "./Layout";
