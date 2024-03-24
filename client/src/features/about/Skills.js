@@ -13,13 +13,9 @@ import {
   SiHtml5,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
-import { useAboutInfo } from "./useAboutInfo";
 
 function Skills() {
-  const { isLoading, data } = useAboutInfo();
-
-  if (isLoading) return;
-
+  const data = useSelector((store) => store.about);
   return (
     <section className="skills">
       <div className="container">
