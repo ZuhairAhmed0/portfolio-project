@@ -17,6 +17,7 @@ import About from "./dashboard/about/About";
 
 import Services from "./dashboard/services/Services";
 import Projects from "./dashboard/projects/Projects";
+import Messages from "./dashboard/messages/Messages";
 import Login from "./features/auth/Login";
 import {
     useAboutInfo
