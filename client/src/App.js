@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { Route, Routes } from "react-router-dom";
+=======
+import {
+    Route,
+    Routes
+} from "react-router-dom";
+import {useEffect} from "react";
+>>>>>>> 54bbe316d0bda432d304a26da590ab7e5fa10703
 import Layout from "./Layout";
 import Home from "./components/Home";
 import ProjectDetails from "./features/projects/ProjectDetails";
@@ -20,12 +28,28 @@ import { setProjects } from "./features/projects/projectsSlice";
 import { useEffect } from "react";
 
 function App() {
+<<<<<<< HEAD
   const { data: aboutData } = useAboutInfo();
   const { data: servicesData } = useMyServices();
   const { data: projectsData } = useProjects();
+=======
+    const {
+        data: aboutData
+    } = useAboutInfo();
+    const {
+        data: servicesData
+    } = useMyServices();
+    const {
+        data: projectsData
+    } = useProjects();
+    const {
+        data: messagesData
+    } = useMessages();
+>>>>>>> 54bbe316d0bda432d304a26da590ab7e5fa10703
 
   const dispatch = useDispatch();
 
+<<<<<<< HEAD
   useEffect(() => {
     if (aboutData) {
       dispatch(setAboutInfo(aboutData));
@@ -45,6 +69,32 @@ function App() {
   }, [dispatch, projectsData]);
 
   
+=======
+    useEffect(() => {
+        if (aboutData) {
+            dispatch(setAboutInfo(aboutData));
+        }
+    },[dispatch,aboutData]);
+
+    useEffect(() => {
+        if (servicesData) {
+            dispatch(setServices(servicesData));
+        }
+    },[dispatch,servicesData]);
+
+    useEffect(() => {
+        if (projectsData) {
+            dispatch(setProjects(projectsData));
+        }
+    },[dispatch,projectsData]);
+
+    useEffect(() => {
+        if (messagesData) {
+            dispatch(setMessages(messagesData));
+        }
+    },[dispatch,messagesData]);
+    
+>>>>>>> 54bbe316d0bda432d304a26da590ab7e5fa10703
   return (
     <Routes>
       <Route element={<Layout />}>
