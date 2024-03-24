@@ -13,6 +13,7 @@ import {
   SiHtml5,
 } from "react-icons/si";
 import { FaTools } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 function Skills() {
   const data = useSelector((store) => store.about);
