@@ -2,6 +2,7 @@ import {
     Route,
     Routes
 } from "react-router-dom";
+import {useEffect} from "react";
 import Layout from "./Layout";
 import Home from "./components/Home";
 import ProjectDetails from "./features/projects/ProjectDetails";
@@ -60,33 +61,25 @@ function App() {
         if (aboutData) {
             dispatch(setAboutInfo(aboutData));
         }
-    },
-        [dispatch,
-            aboutData]);
+    },[dispatch,aboutData]);
 
     useEffect(() => {
         if (servicesData) {
             dispatch(setServices(servicesData));
         }
-    },
-        [dispatch,
-            servicesData]);
+    },[dispatch,servicesData]);
 
     useEffect(() => {
         if (projectsData) {
             dispatch(setProjects(projectsData));
         }
-    },
-        [dispatch,
-            projectsData]);
+    },[dispatch,projectsData]);
 
     useEffect(() => {
         if (messagesData) {
             dispatch(setMessages(messagesData));
         }
-    },
-        [dispatch,
-            messagesData]);
+    },[dispatch,messagesData]);
     
   return (
     <Routes>
