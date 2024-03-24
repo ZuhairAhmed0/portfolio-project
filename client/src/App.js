@@ -41,7 +41,6 @@ import {
 } from "./dashboard/messages/messagesSlice";
 
 function App() {
-<<<<<<< HEAD
     const {
         data: aboutData
     } = useAboutInfo();
@@ -88,12 +87,9 @@ function App() {
     },
         [dispatch,
             messagesData]);
-    return (
-        <Routes>
-=======
+    
   return (
     <Routes>
->>>>>>> b61ba991c7ba2a1de24fe368f266b95741214245
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="projects/:name" element={<ProjectDetails />} />
@@ -110,9 +106,5 @@ function App() {
     </Routes>
     );
 }
-<<<<<<< HEAD
 
 export default App;
-=======
-export default App;
->>>>>>> b61ba991c7ba2a1de24fe368f266b95741214245
