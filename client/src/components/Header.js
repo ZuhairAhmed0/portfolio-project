@@ -12,9 +12,11 @@ function Header() {
         <div className="info">
           <h3>Hey, I'm Zuhair Ahmed</h3>
           <p>{bio}</p>
+          <HashLink to="/#projects">
           <Button className="primary">
-            <HashLink to="/#projects">Projects</HashLink>
+            Projects
           </Button>
+         </HashLink>
         </div>
         <div className="img"></div>
       </div>
