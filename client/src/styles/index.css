@@ -335,6 +335,7 @@ textarea {
   flex-wrap: wrap;
   width: 100%;
   padding-top: 10px;
+  justify-content: center;
 }
 .skills .container .skill p {
   display: block;
@@ -504,9 +505,10 @@ textarea {
   margin: 0 auto;
 }
 .projects .details {
-  width: 80%;
+  width: 95%;
   margin: 10px auto;
   padding-top: 40px;
+  max-width: 900px;
 }
 .projects .details div.card {
   height: 700px;
