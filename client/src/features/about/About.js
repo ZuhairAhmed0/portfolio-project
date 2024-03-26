@@ -25,9 +25,11 @@ function About() {
             matches my skills and experisn then don't hesitate to{" "}
             <strong>contact</strong> me.
           </p>
+         <HashLink to="/#contact">
           <Button className="primary" type="button">
-            <HashLink to="/#contact">Contact Me</HashLink>
+            Contact Me
           </Button>
+          </HashLink>
         </div>
       )}
     </section>
