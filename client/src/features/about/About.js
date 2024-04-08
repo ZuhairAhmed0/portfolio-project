@@ -1,6 +1,7 @@
 import Button from "../../components/Button";
 import { FcAbout } from "react-icons/fc";
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function About() {
@@ -25,11 +26,11 @@ function About() {
             matches my skills and experisn then don't hesitate to{" "}
             <strong>contact</strong> me.
           </p>
-         <HashLink to="/#contact">
+         <Link to="https://app.flowcv.com/api/public/download_resume?token=ulo1t00a8d" target="_blank">
           <Button className="primary" type="button">
-            Contact Me
+            Download CV
           </Button>
-          </HashLink>
+          </Link>
         </div>
       )}
     </section>
