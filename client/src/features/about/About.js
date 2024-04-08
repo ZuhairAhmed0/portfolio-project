@@ -26,7 +26,7 @@ function About() {
             matches my skills and experisn then don't hesitate to{" "}
             <strong>contact</strong> me.
           </p>
-         <Link to="https://app.flowcv.com/api/public/download_resume?token=ulo1t00a8d" target="_blank">
+         <Link to="https://app.flowcv.com/api/public/download_resume?token=ulo1t00a8d">
           <Button className="primary" type="button">
             Download CV
           </Button>
